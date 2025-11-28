@@ -3,7 +3,7 @@ package http
 import (
 	"net/http"
 
-	"gateway/internal/http/handlers"
+	"template/internal/http/handlers"
 )
 
 
