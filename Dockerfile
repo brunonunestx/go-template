@@ -9,7 +9,7 @@ COPY go.mod ./
 
 COPY . .
 
-RUN go build -o server .
+RUN go build -o server ./cmd/api
 
 FROM debian:bookworm-slim
 

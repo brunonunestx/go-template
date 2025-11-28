@@ -1,15 +1,15 @@
 package main
 
 import (
-	"fmt"
+	"log"
 	"net/http"
+
+	apiRouter "gateway/internal/http"
 )
 
 func main() {
-	http.HandleFunc("/ping", func(w http.ResponseWriter, r *http.Request) {
-		fmt.Fprintf(w, "pong")
-	})
+	router := apiRouter.NewRouter()
 
-	fmt.Println("Servidor rodando em :8080")
-	http.ListenAndServe(":8080", nil)
+	log.Println("Servidor rodando em :8080")
+	log.Fatal(http.ListenAndServe(":8080", router))
 }
